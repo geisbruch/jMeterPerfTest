@@ -11,6 +11,15 @@
       <stringProp name="TestPlan.user_define_classpath"></stringProp>
     </TestPlan>
     <hashTree>
+      <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Page" enabled="true">
+        <stringProp name="maximumValue">100000</stringProp>
+        <stringProp name="minimumValue">1</stringProp>
+        <stringProp name="outputFormat"></stringProp>
+        <boolProp name="perThread">false</boolProp>
+        <stringProp name="randomSeed"></stringProp>
+        <stringProp name="variableName">PAGE</stringProp>
+      </RandomVariableConfig>
+      <hashTree/>
       <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Variables" enabled="true">
         <collectionProp name="Arguments.arguments">
           <elementProp name="LOOP" elementType="Argument">
@@ -35,7 +44,7 @@
           </elementProp>
           <elementProp name="PATH" elementType="Argument">
             <stringProp name="Argument.name">PATH</stringProp>
-            <stringProp name="Argument.value">/items/10001</stringProp>
+            <stringProp name="Argument.value">/items</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="INIT" elementType="Argument">
@@ -56,7 +65,7 @@
         <stringProp name="HTTPSampler.response_timeout"></stringProp>
         <stringProp name="HTTPSampler.protocol"></stringProp>
         <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-        <stringProp name="HTTPSampler.path">${PATH}</stringProp>
+        <stringProp name="HTTPSampler.path">${PATH}/${PAGE}</stringProp>
       </ConfigTestElement>
       <hashTree/>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
